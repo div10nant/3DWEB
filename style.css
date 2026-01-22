@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'DreamerTM';
+    src: url(./DreamerTM-Regular.ttf) format('');
+}
+body {
+    background-color: black; 
+}
+h1 {
+    font-family: "DreamerTM", BonBon;
+    font-size: 250px;
+    color: ghostwhite;
+    text-align: center;
+margin:auto;}
+p {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+p2 {
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
