@@ -11,13 +11,27 @@ h1 {
     color: ghostwhite;
     text-align: center;
 margin:auto;}
+h2 {
+    font-family: "DreamerTM", BonBon;
+    font-size: 10px;
+    color: ghostwhite;
+    text-align: center;
+}
 p {
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+p2 {
     color: white;
     text-align: center;
     margin: auto;
 }
 
-p2 {
+a{
     color: white;
     text-align: center;
     margin: auto;
