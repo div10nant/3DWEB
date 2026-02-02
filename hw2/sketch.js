@@ -8,18 +8,21 @@ function setup() {
 function draw() {
     background(200);
     orbitControl();
-    box(100);
+    fill(254, 250, 224);
+    noStroke();
+    box(100,100,50);
     translate(0,0,30);
-    fill(255, 200, 221);
+    fill(254, 250, 224);
     box(80);
     translate(0,0,30);
     translate(0,0,0);
-    fill(153,88,42);
+    fill(254, 250, 224);
     box(60);
     translate(0,0);
     translate(0,0,-130);
     rotateZ(90);
     rotateX(-90);
+    fill(221, 161, 94);
     cone(50,100,300);
     translate(0,-100,0);
 }
