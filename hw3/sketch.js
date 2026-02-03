@@ -15,8 +15,6 @@ function draw() {
     shininess(0);
     specularMaterial(255,0,255);
     //model(myShape);
-    
-    
     ellipsoid(100,50,100);
 }
 
