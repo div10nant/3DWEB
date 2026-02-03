@@ -1,4 +1,4 @@
-let myShape;
+
 
 function setup(){
     let canvas = createCanvas(400, 400, WEBGL);
@@ -15,7 +15,11 @@ function draw() {
     shininess(0);
     specularMaterial(255,0,255);
     //model(myShape);
-    ellipsoid(100,50,100);
+    cylinder(20,230,20);
+    
+    translate(0,-100,0);
+    rotate(90);
+    cylinder(40,70,40);
 }
 
 function lampBlob() {
