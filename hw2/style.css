@@ -1,4 +1,7 @@
-background(black);
+
+body{
+    background-color: black;
+}
 
 .lacquer-regular {
   font-family: "Lacquer", system-ui;
@@ -11,5 +14,6 @@ h1 {
     font-family: Laquer;
 }
 canvas {
+ 
     align-content: center;
 }
