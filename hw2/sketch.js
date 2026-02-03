@@ -6,7 +6,7 @@ function setup() {
 }
 
 function draw() {
-    background(200);
+    background(0);
     orbitControl();
     fill(254, 250, 224);
     noStroke();
