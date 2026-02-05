@@ -10,19 +10,36 @@ function draw() {
     orbitControl();
     noStroke();
     lights();
-    fill(0,255,255);
+    //ambientLight(245, 182, 66);
+    fill(220,220,220);
     shininess(0);
     specularMaterial(255,0,255);
     //model(myShape);
-    cylinder(20,230,20);
     
-    translate(0,-120,0);
+    push();
+    fill(220,220,220);
+    translate(20,-110,0);
     rotate(90);
-    cylinder(20,70,20);
-    
-    translate(20,40,10);
-    rotateZ(-45);
-    cone(10,70,10);
+    translate(5,55,7);
+    rotateZ(-20);
+    cone(10,60,);
+    translate(0,0,-14)
+    cone(10,60,);
+    pop();
+    push();
+    translate(40,-110,0);
+    rotate(90);
+    cylinder(15,20,15);
+    pop();
+    cylinder(15,190,20);
+    push();
+    translate(0,-110,0);
+    box(40,29,35);
+    pop();
+    translate(20,-110,0);
+    rotateZ(90);
+    cylinder(10,30,10);
+
 }
 
 function lampBlob() {
