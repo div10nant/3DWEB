@@ -17,9 +17,13 @@ function draw() {
     //model(myShape);
     cylinder(20,230,20);
     
-    translate(0,-100,0);
+    translate(0,-120,0);
     rotate(90);
-    cylinder(40,70,40);
+    cylinder(20,70,20);
+    
+    translate(0,40,0);
+    rotateZ(-45);
+    cone(15,70,15);
 }
 
 function lampBlob() {
