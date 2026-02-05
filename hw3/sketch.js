@@ -20,9 +20,9 @@ function draw() {
     rotate(90);
     cylinder(20,70,20);
     
-    translate(0,40,0);
+    translate(20,40,10);
     rotateZ(-45);
-    cone(15,70,15);
+    cone(10,70,10);
 }
 
 function lampBlob() {
