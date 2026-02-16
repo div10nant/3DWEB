@@ -2,9 +2,10 @@ let canvas;
 let boxColor;
 let lightMode = 0;
 let lampVisible = true;
+let cameraSwitch = true;
 
 function setup(){
-    canvas = createCanvas(600, 600, WEBGL);
+    canvas = createCanvas(800, 600, WEBGL);
     canvas.parent("p5-holder");
     angleMode(DEGREES);
     colorMode(HSB, 360,100,100,100);
@@ -22,10 +23,15 @@ function preload() {
 }
 
 function draw(){
-    background(0);
+    background(255);
     noStroke();
     pointLight(255,255,255,0,0,500);
     orbitControl();
+    if(cameraSwitch) {
+        perspective();
+    } else if (!cameraSwitch) {
+        ortho();
+    }
     if (lightMode === 0) {
         // Normal lighting
         ambientLight(0);
@@ -48,25 +54,25 @@ function draw(){
     push();
     translate(250,170,500);
     rotateZ(90);
-    box(200,20,20)
+    box(200,20,20);
     pop();
     
     push();
-    translate(250,170,-500);
+    translate(250,170,500);
     rotateZ(90);
-    box(200,20,20)
+    box(200,20,20);
     pop();
     
     push();
     translate(-250,170,500);
     rotateZ(90);
-    box(200,20,20)
+    box(200,20,20);
     pop();
      
     push();
     translate(-250,170,-500);
     rotateZ(90);
-    box(200,20,20)
+    box(200,20,20);
     pop();
 
 
@@ -107,8 +113,15 @@ function keyPressed() {
             lightMode = 0;
     }
 }
+    if (key == 'c') {
+       if (cameraSwitch) {
+            cameraSwitch = false;
+        } else if (!cameraSwitch) {
+            cameraSwitch = true;
+        } 
 
 }
+     } 
 
 
 
