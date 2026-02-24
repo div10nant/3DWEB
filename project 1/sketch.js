@@ -8,19 +8,23 @@ function preload() {
  
 }
 
-
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     //angleMode(DEGREES);
     colorMode(HSB);
     rectMode(CENTER);
+    nextButton = createButton('Tell Me How 2 Feel');
+    nextButton.position(300, 400); // Set position (x, y)
+    nextButton.mousePressed(goToNextPage); // Attach the event handler
+
 }
 
 function draw() {
     scale(0.5);
     translate(0,0,-2000);
     background(0);
-    orbitControl(1,1,0.5);
+    orbitControl(0,0,0.3);
+    
     for (let i = 0; i < 10; i++){
         push();
         translate(-500,-600,(i*2));
@@ -37,7 +41,7 @@ for (let z = -100; z < 100; z += 5) {
   
   // Rotate the end point based on how far back it is,
   // and additionally based on the time
-  let endPoint = createVector(0, 20);
+  let endPoint = createVector(0, 100);
   endPoint.rotate((z + frameCount) * 0.1);
   
   // In a QUAD_STRIP, each pair of vertices forms a
@@ -51,3 +55,8 @@ endShape();
 
     
 }
+
+function goToNextPage() {
+  window.location.href = "next_page.html"; // Replace "next_page.html" with your target URL
+}
+
