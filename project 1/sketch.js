@@ -3,6 +3,8 @@ let x;
 let y;
 let z;
 let myTitle;
+let button;
+let buttonSize = 75;
 function preload() {
   myTitle = loadImage('./feelingfinder.png');
  
@@ -14,7 +16,7 @@ function setup() {
     colorMode(HSB);
     rectMode(CENTER);
     nextButton = createButton('Tell Me How 2 Feel');
-    nextButton.position(300, 400); // Set position (x, y)
+    nextButton.style("width", buttonSize+"px"); // Set position (x, y)
     nextButton.mousePressed(goToNextPage); // Attach the event handler
 
 }
