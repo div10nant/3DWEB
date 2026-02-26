@@ -6,7 +6,7 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
-let sphereRot1 = 0;
+let sphereRot1 = 0.1;
 
 
 function preload() {
@@ -46,16 +46,50 @@ function draw() {
     pop();
     push();
     translate(-500, 0, 0);
-    cone(300, 300, 4);
-    translate(200, -150, 0);
+    rotateY(sphereRot1);
+    cone(250, 250, 4);
+    pop();
+    push();
+    
+    translate(250, -10, 0);
+    rotate(PI/2);
+    rotateY(sphereRot1);
     box(250);
 
     pop();
+    
+    push();
+    
+    translate(250, -10, 0);
+    rotate(PI/4);
+    rotateY(sphereRot1);
+    box(250);
+
+    pop();
+    
+    push();
+    translate(-500, 0, 0);
+    rotateX(sphereRot1);
+    cone(250, 250, 4);
+    pop();
+    
+    push();
+    translate(300, -200, 0);
+    rotateY(sphereRot1);
+    cone(150, 250, 4);
+    pop();
 
     push();
-    translate(-350, 100, 0);
+    translate(-350, 100, -150);
     rotateY(-sphereRot1);
     sphere(150);
+    pop();
+    
+    push();
+    translate(-50, 100, -500);
+    rotate(PI/3);
+    rotateZ(-sphereRot1);
+    sphere(100);
     pop();
 
     for (let i = 0; i < 10; i++) {
@@ -68,15 +102,16 @@ function draw() {
     spiral();
 
     push();
-    translate(600, -100, 0);
+    translate(600, -100, 500);
     rotateZ(PI * 0.1);
     spiral();
     pop();
 
     push();
-    translate(1000, -1000, 0);
-    rotateZ(PI * 0.5);
-    rotateX(PI * 0.2);
+    
+    translate(1900, -300, 0);
+    rotateZ(PI * -0.1);
+    rotateX(PI * -0.2);
     spiral();
     pop();
     sphereRot1 = sphereRot1 + 0.018; 
