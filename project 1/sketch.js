@@ -16,7 +16,6 @@ function setup() {
     canvas.parent("sketch-holder");
     //angleMode(DEGREES);
     colorMode(HSB);
-    angleMode(DEGREES);
     rectMode(CENTER);
     nextButton = createButton("Tell Me How 2 Feel");
     nextButton.style("width", buttonSize + "px"); // Set position (x, y)
@@ -67,9 +66,8 @@ function draw() {
 function spiral() {
     beginShape(QUAD_STRIP);
     for (let i = 0; i < 7; i++) {
-        rotateX(sphereRot1);
-        rotateY(7);
-        sphereRot1++;
+        rotateX(PI * -0.2);
+        rotateY(PI * 0.2);
         // Draw a strip of quads in a spiral formation
 
         translate(0, 0, -820);
