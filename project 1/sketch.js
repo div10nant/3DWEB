@@ -6,6 +6,7 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
+let sphereRot1 = pi/2;
 
 function preload() {
     myTitle = loadImage("./feelingfinder.png");
@@ -45,11 +46,16 @@ function draw() {
     pop();
 
     push();
-    rotateY();
+    
+        
     translate(-800, 0, 0);
+    rotateY(sphereRot1);
     sphere(200);
-
+    boxRot1++;
+    
     pop();
+    
+    push();
 
     for (let i = 0; i < 10; i++) {
         push();
@@ -58,7 +64,7 @@ function draw() {
         pop();
     }
 
-   
+   pop();
 
     spiral();
 }
