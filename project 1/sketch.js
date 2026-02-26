@@ -32,27 +32,31 @@ function setup() {
 function draw() {
     scale(0.5);
 
-    translate(0, 0, -2000);
+    //translate(0, 0, -1000);
     background(0);
-    orbitControl(0, 0, 0.3);
+    orbitControl(0, 0, 0.4);
     
-    fill(255);
-    sphere(200);
+    fill(255, 0, 0, 100);
+    stroke(255);
+    
+    push();
+    translate(450,-100,0);
+    sphere(150);
+    pop();
     push();
     translate(-500, 0, 0);
     cone(300, 300, 4);
     translate(200, -150, 0);
     box(250);
-    endShape();
-    pop();
-
-    push();
-    rotateY(sphereRot1);
     
-    translate(-800, 0, 0);
-    sphere(200);
-
     pop();
+    
+    push();
+    translate(-350,100,0);
+    sphere(150);
+    pop();
+
+    
 
     for (let i = 0; i < 10; i++) {
         push();
@@ -89,7 +93,7 @@ function spiral() {
         translate(0, 0, -820);
         for (let z = -100; z < 100; z += 5) {
             //fill((z + frameCount) % 360, 100, 100);
-            fill(255);
+            
             // Rotate the end point based on how far back it is,
             // and additionally based on the time
             let endPoint = createVector(0, 100);
