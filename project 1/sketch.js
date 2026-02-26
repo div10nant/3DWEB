@@ -6,7 +6,6 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
-let sphereRot1 = pi/2;
 
 function preload() {
     myTitle = loadImage("./feelingfinder.png");
@@ -17,6 +16,7 @@ function setup() {
     canvas.parent("sketch-holder");
     //angleMode(DEGREES);
     colorMode(HSB);
+    angleMode(DEGREES);
     rectMode(CENTER);
     nextButton = createButton("Tell Me How 2 Feel");
     nextButton.style("width", buttonSize + "px"); // Set position (x, y)
@@ -46,16 +46,11 @@ function draw() {
     pop();
 
     push();
-    
-        
+    rotateY();
     translate(-800, 0, 0);
-    rotateY(sphereRot1);
     sphere(200);
-    boxRot1++;
-    
+
     pop();
-    
-    push();
 
     for (let i = 0; i < 10; i++) {
         push();
@@ -64,7 +59,7 @@ function draw() {
         pop();
     }
 
-   pop();
+   
 
     spiral();
 }
@@ -72,11 +67,12 @@ function draw() {
 function spiral() {
     beginShape(QUAD_STRIP);
     for (let i = 0; i < 7; i++) {
-        rotateX(PI * -0.2);
-        rotateY(PI * 0.2);
+        rotateX(sphereRot1);
+        rotateY(7);
+        sphereRot1++;
         // Draw a strip of quads in a spiral formation
 
-        translate(i*20, 0, -820);
+        translate(0, 0, -820);
         for (let z = -100; z < 100; z += 5) {
             //fill((z + frameCount) % 360, 100, 100);
             fill(255);
