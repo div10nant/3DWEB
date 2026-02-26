@@ -6,6 +6,8 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
+let sphereRot1;
+sphereRot1 = sphereRot1+0.18;
 
 function preload() {
     myTitle = loadImage("./feelingfinder.png");
@@ -33,7 +35,7 @@ function draw() {
     translate(0, 0, -2000);
     background(0);
     orbitControl(0, 0, 0.3);
-
+    
     fill(255);
     sphere(200);
     push();
@@ -45,7 +47,8 @@ function draw() {
     pop();
 
     push();
-    rotateY();
+    rotateY(sphereRot1);
+    
     translate(-800, 0, 0);
     sphere(200);
 
@@ -61,6 +64,19 @@ function draw() {
    
 
     spiral();
+    
+    push();
+    translate(600,-100,0);
+    rotateZ(PI*0.1);
+    spiral();
+    pop();
+    
+    push();
+    translate(1000,-1000,0);
+    rotateZ(PI*0.5);
+    rotateX(PI*0.2);
+    spiral();
+    pop();
 }
 
 function spiral() {
@@ -90,24 +106,6 @@ function spiral() {
     }
 }
 
-function mouseWheel() {
-    if (event.delta > 0) {
-        buttonSize--;
-    } else {
-        buttonSize++;
-    }
-
-    if (buttonSize < 90) {
-        buttonSize = 90;
-    } else if (buttonSize > 200) {
-        buttonSize = 200;
-    }
-
-    button.style("width", buttonSize + "px");
-    button.style("height", buttonSize / 3 + "px");
-    button.style("margin", "-" + buttonSize / 6 + "px -" + buttonSize / 2 + "px");
-    button.style("font-size", buttonSize / 7 + "px");
-}
 
 function goToNextPage() {
     window.location.href = "./nextpage/index.html"; // Replace "next_page.html" with your target URL
