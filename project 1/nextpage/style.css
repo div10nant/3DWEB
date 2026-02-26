@@ -2,11 +2,6 @@ body {
     background-color: black;
 }
 
-a {
-    color: white;
-
-}
-
 button {
     position: absolute;
     top: 400px;
