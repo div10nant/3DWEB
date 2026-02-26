@@ -2,9 +2,18 @@ body {
     background-color: black;
 }
 
-button {
+.home {
+    
+    left: 50%;
+    background-color: transparent;
+    font-family: "Courier New", monospace; 
+    color: white;
+    border-style: none;
+}
+
+.try {
     position: absolute;
-    top: 400px;
+    top: 650px;
     left: 50%;
     background-color: transparent;
     font-family: "Courier New", monospace; 

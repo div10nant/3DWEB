@@ -15,7 +15,10 @@ h1 {
 }
 
 a {
+    background-color: transparent;
+    font-family: "Courier New", monospace; 
     color: white;
+    border-style: none;
 }
 canvas {
     align-content: center;

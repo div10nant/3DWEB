@@ -3,8 +3,16 @@ body {
 }
 
 a {
-    color: white;
 
+    font-family: "Courier New", monospace; 
+    color: white;
+    border-style: none;
+    font-size: small;
+    text-decoration: none;
+}
+.boxhead a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 button {
@@ -17,3 +25,4 @@ button {
     border-style: none;
 
 }
+
