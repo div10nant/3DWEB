@@ -17,11 +17,11 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight, WEBGL);
     canvas.parent("middle");
     rectMode(CENTER);
-    button = createButton("Try Again");
+    button = createButton("try again");
     button.class("try");
     button.mousePressed(refresh);
     
-    button2 = createButton("Go Home");
+    button2 = createButton("go home");
     button2.class("home");
     button2.parent("top");
     button2.mousePressed(goToMain);
