@@ -7,7 +7,7 @@ let canvas;
 
 function preload() {
     
-    for(let i =  0; i < 2; i++) {
+    for(let i =  0; i < 22; i++) {
         imgArray[i] = loadImage("./feeling"+i+".png");
     }
 }
