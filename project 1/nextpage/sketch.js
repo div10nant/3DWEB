@@ -7,7 +7,7 @@ let canvas;
 
 function preload() {
     
-    for(let i =  0; i < 22; i++) {
+    for(let i =  0; i < 2; i++) {
         imgArray[i] = loadImage("./feeling"+i+".png");
     }
 }
@@ -20,6 +20,7 @@ function setup() {
     button = createButton("try again");
     button.class("try");
     button.mousePressed(refresh);
+
     
     button2 = createButton("go home");
     button2.class("home");
@@ -38,8 +39,10 @@ function goToMain() {
 
 function draw() {
   
-    translate(-500,-200,0);
+     scale(1.2);
+    translate(-500,-250,0);
     orbitControl(0, 0, 0.4);
+   
     image(imgArray[imgIndex],0,0);
 
 }
