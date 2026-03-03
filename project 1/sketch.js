@@ -49,7 +49,7 @@ function draw() {
 
     fill(255, 0, 0, 100);
     stroke(255);
-    sphereRot1 = sphereRot1 + 0.005;
+    sphereRot1 = sphereRot1 + 0.018;
 
     push();
     translate(350, -180, 800);
@@ -103,7 +103,7 @@ function draw() {
     push();
     translate(200, 800, -900);
     rotateY(sphereRot1);
-    cone(250, 550, 10);
+    cone(250, 550, 6);
     pop();
 
     push();
