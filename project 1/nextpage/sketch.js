@@ -4,10 +4,11 @@ let imgIndex = 0;
 let button;
 let button2;
 let canvas; 
+let i;
 
 function preload() {
     
-    for(let i =  0; i < 23; i++) {
+    for(let i =  0; i < 35; i++) {
         imgArray[i] = loadImage("./feeling"+i+".png");
     }
 }
@@ -27,6 +28,8 @@ function setup() {
     button2.parent("top");
     button2.mousePressed(goToMain);
     
+    
+   
     refresh();
     
     

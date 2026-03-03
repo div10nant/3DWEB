@@ -6,10 +6,14 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
-let sphereRot1 = 0.1;
+let sphereRot1 = 0.05;
+let myFont;
+let textFill = 255;
+let isDimming = true;
 
 function preload() {
     myTitle = loadImage("./feelingfinder.png");
+    myFont = loadFont("./CourierNew.ttf");
 }
 
 function setup() {
@@ -26,22 +30,40 @@ function setup() {
     nextButton.style("height", buttonSize / 3 + "px");
     nextButton.style("margin", "-" + buttonSize / 6 + "px -" + buttonSize / 2 + "px");
     nextButton.style("font-size", buttonSize / 7 + "px");
-
-
-
+    
+    textFont(myFont);
+    textAlign(CENTER);
+    textSize(30);
+    
 }
 
 function draw() {
     background(0);
-    
+
     fill(255);
-   
+
     orbitControl(0, 0, 0.4);
+      if(isDimming) {
+    textFill = textFill - 2.5;
+    if(textFill <= 0) {
+      isDimming = false;
+    }
+  } else if (!isDimming) {
+    textFill = textFill + 2.5;
+    if(textFill >= 255) {
+      isDimming = true;
+    }
+  }
+  
+  // apply dynamic fill color to text
+  fill(textFill);
+  text("Zoom In",0,150);
 
     scale(0.5);
 
     fill(255, 0, 0, 100);
     stroke(255);
+    sphereRot1 = sphereRot1 + 0.018;
 
     push();
     translate(250, -150, 800);
@@ -73,10 +95,10 @@ function draw() {
 
     push();
 
-    translate(-250, 600, -1200);
-    rotate(PI / 2);
-    rotateY(sphereRot1);
-    box(150);
+    translate(-300, 700, -1600);
+    rotateZ(PI / 2);
+    rotateZ(sphereRot1);
+    box(350);
 
     pop();
 
@@ -85,15 +107,27 @@ function draw() {
     rotateX(sphereRot1);
     cone(250, 250, 4);
     pop();
+    
+    push();
+    translate(800, 0, -900);
+    rotateX(sphereRot1);
+    cone(250, 250, 4);
+    pop();
+    
+    push();
+    translate(200, 800, -900);
+    rotateY(sphereRot1);
+    cone(250, 550, 10);
+    pop();
 
     push();
-    translate(-700, 300, 100);
+    translate(-600, 300, 100);
     rotateY(sphereRot1);
     cone(150, 250, 4);
     pop();
 
     push();
-    translate(-250, 150, -150);
+    translate(-350, 150, -550);
     rotateY(-sphereRot1);
     sphere(150);
     pop();
@@ -115,7 +149,7 @@ function draw() {
     spiral();
 
     push();
-    translate(1700, -100, 500);
+    translate(1700, -100, 1200);
     rotateZ(PI * 0.1);
     spiral();
     pop();
@@ -127,7 +161,7 @@ function draw() {
     rotateY(PI * -0.3);
     spiral();
     pop();
-    sphereRot1 = sphereRot1 + 0.018;
+    
 
     push();
 
@@ -136,8 +170,26 @@ function draw() {
     rotateX(PI * -0.2);
     spiral();
     pop();
-    sphereRot1 = sphereRot1 + 0.018;
+
+    push();
+
+    translate(0, -1400, -200);
+    rotateX(sphereRot1);
+    box(200);
+    pop();
+    
+
+    push();
+    translate(200, -1200, -200);
+    rotateZ(PI * -0.8);
+    rotateX(PI * -0.2);
+    spiral();
+    pop();
+    
+    
+
 }
+
 
 function spiral() {
     beginShape(QUAD_STRIP);
