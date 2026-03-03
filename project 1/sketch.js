@@ -6,14 +6,14 @@ let myTitle;
 let button;
 let buttonSize = 100;
 let i;
-let sphereRot1 = 0.05;
-let myFont;
+let sphereRot1 = 0.03;
+//let myFont = textFont('Courier New');
 let textFill = 255;
 let isDimming = true;
 
 function preload() {
     myTitle = loadImage("./feelingfinder.png");
-    myFont = loadFont("./CourierNew.ttf");
+
 }
 
 function setup() {
@@ -31,9 +31,9 @@ function setup() {
     nextButton.style("margin", "-" + buttonSize / 6 + "px -" + buttonSize / 2 + "px");
     nextButton.style("font-size", buttonSize / 7 + "px");
     
-    textFont(myFont);
-    textAlign(CENTER);
-    textSize(30);
+    textFont('Courier New');
+    //textAlign(CENTER);
+    textSize(80);
     
 }
 
@@ -43,30 +43,16 @@ function draw() {
     fill(255);
 
     orbitControl(0, 0, 0.4);
-      if(isDimming) {
-    textFill = textFill - 2.5;
-    if(textFill <= 0) {
-      isDimming = false;
-    }
-  } else if (!isDimming) {
-    textFill = textFill + 2.5;
-    if(textFill >= 255) {
-      isDimming = true;
-    }
-  }
-  
-  // apply dynamic fill color to text
-  fill(textFill);
-  text("Zoom In",0,150);
+     
 
     scale(0.5);
 
     fill(255, 0, 0, 100);
     stroke(255);
-    sphereRot1 = sphereRot1 + 0.018;
+    sphereRot1 = sphereRot1 + 0.005;
 
     push();
-    translate(250, -150, 800);
+    translate(350, -180, 800);
     rotateY(sphereRot1);
     sphere(100);
     pop();
@@ -186,7 +172,21 @@ function draw() {
     spiral();
     pop();
     
-    
+     if(isDimming) {
+    textFill = textFill - 2.5;
+    if(textFill <= 0) {
+      isDimming = false;
+    }
+  } else if (!isDimming) {
+    textFill = textFill + 2.5;
+    if(textFill >= 255) {
+      isDimming = true;
+    }
+  }
+  
+  // apply dynamic fill color to text
+  fill(textFill);
+  text("Zoom In",500,150);
 
 }
 
