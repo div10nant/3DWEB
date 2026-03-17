@@ -192,9 +192,37 @@ function init() {
 // Function to update moving objects, in this case the camera.
 // The render function is trigger at the end to update the canvas.
 function animate() {
-    controls.update();
-    render();
+    const time = performance.now();
+
+				if ( controls.isLocked === true ) {
+
+					
+					const delta = ( time - prevTime ) / 1000;
+
+					velocity.x -= velocity.x * 10.0 * delta;
+					velocity.z -= velocity.z * 10.0 * delta;
+
+					velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+
+					direction.z = Number( moveForward ) - Number( moveBackward );
+					direction.x = Number( moveRight ) - Number( moveLeft );
+					direction.normalize(); // this ensures consistent movements in all directions
+
+					if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
+					if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
+
+					controls.moveRight( - velocity.x * delta );
+					controls.moveForward( - velocity.z * delta );
+				
+
+						canJump = true;
 }
+prevTime = time;
+    render();
+
+                }
+
+
 
 // Function to render the scene using the camera.
 function render() {
