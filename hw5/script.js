@@ -9,7 +9,7 @@
 import * as THREE from 'three';
 
 // The plug-in for orbit controls
-import { OrbitControls } from '../src/OrbitControls.js';
+import { OrbitControls } from './src/OrbitControls.js';
 
 // Declaring global variables.
 let camera, canvas, controls, scene, renderer;
@@ -23,11 +23,11 @@ function init() {
     // scene setup
     canvas = document.getElementById("3-holder");
     scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xbfeff5 );
-    scene.fog = new THREE.FogExp2( 0xbfeff5, 0.0015 );
+    scene.background = new THREE.Color( 0x00ffff );
+    scene.fog = new THREE.FogExp2(0xcc66ff, 0.0015 );
     renderer = new THREE.WebGLRenderer( { antialias: true } );
-    renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( 400,400 );
+    //renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( 500,900 );
     renderer.setAnimationLoop( animate );
     canvas.appendChild( renderer.domElement );
 
@@ -50,7 +50,7 @@ function init() {
 
     // Grouping of trees
     const geometry = new THREE.ConeGeometry( 10, 60, 8, 1 );
-    const material = new THREE.MeshPhongMaterial( { color: 0x14401e, flatShading: true } );
+    const material = new THREE.MeshPhongMaterial( { color: 0xffccff, flatShading: true } );
     const mesh = new THREE.InstancedMesh( geometry, material, 500 );
     const tree = new THREE.Object3D();
     for ( let i = 0; i < 75; i ++ ) {

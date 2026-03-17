@@ -1,16 +1,11 @@
-@font-face {
- font-family: 'Courier New';
-}
-
 body {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 main {
-  padding-left: 10%;
-  padding-right: 10%;
-  max-width: 800px;
   margin: auto;
 }
 
@@ -27,7 +22,6 @@ h1 {
     "ELXP" 0;
   text-align: center;
   margin: auto;
-  padding-bottom: 30px;
 }
 
 h2 {
@@ -41,7 +35,6 @@ h2 {
   color: lightgray;
   margin: auto;
   text-align: center;
-  padding-bottom: 30px;
 }
 
 .caption {
@@ -49,7 +42,8 @@ h2 {
   color: lightgray;
 }
 
-p, ul {
+p,
+ul {
   font-family: "Cascadia Code", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -61,11 +55,30 @@ a {
 }
 
 a:visited {
-  color: deeppink
+  color: deeppink;
 }
 
 canvas {
   display: block;
   margin: auto;
-  padding-bottom: 20px;
+}
+#blocker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#instructions {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
 }
